@@ -38,8 +38,8 @@ var person = {
 var person_json = JSON.stringify(person);// JAVSCRIPT File er vitore json use korle [stringify] use korte hobe 
 console.log(person_json);
 
-*/
 
+//-------------------------------------------------
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -68,5 +68,5 @@ function jsonData(json_obj) {
 
     }
 } 
-
+*/
 

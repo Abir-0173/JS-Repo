@@ -89,16 +89,41 @@
 
 //----------------------------- Fatch API ---------------------
 // console.log(window);
-
-document.getElementById("get_data").addEventListener('click', getData);
+//without arrow---------
+// document.getElementById("get_data").addEventListener('click', getData);
 
 // xhr.open('GET', 'http://api.icndb.com/jokes/random/', true);
 
+// function getData() {
+//     fetch('https://randomuser.me/api/')
+//     .then(function(res){
+//         console.log(res.json());
+//         // return res.json();
+//     })
+//     .then(function (data) {
+//         console.log(data);
+//     })
+//     .catch(function (err) {
+//         console.log(err);
+//     })
+// }
+
+
+//with arrow function ------------
+
+document.getElementById("get_data").addEventListener('click', getData);
+
+// let test = () => {};
+
+
 function getData() {
     fetch('https://randomuser.me/api/')
-    .then(function(res){
-        console.log(res);
-    })
+        .then(res => res.json())
+        // return res.json();
+
+        .then(data => { console.log(data); })
+        .catch(err => { console.log(err); })
+
 }
 
 

@@ -5,6 +5,31 @@ body {
     background-color: #f4f4f4;
 }
 
+#practice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+}
+
+#practice button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    /* Example background color */
+    color: #fff;
+    /* Example text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#get_data {
+    width: 200px;
+    height: 50px;
+    margin: auto;
+}
+
 header {
     background-color: #333;
     color: #fff;
@@ -56,5 +81,5 @@ footer {
     padding: 1em;
     position: fixed;
     bottom: 0;
-    width: 100%; 
+    width: 100%;
 }

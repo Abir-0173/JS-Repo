@@ -16,3 +16,6 @@ body{
     /* background-color: #fff; */
     width: 300px; /* Adjust width as needed */
 }
+a{
+    text-decoration: none;
+}

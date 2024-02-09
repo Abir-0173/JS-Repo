@@ -9,7 +9,7 @@ let clearBtn = document.querySelector('#clear_task_btn');
 form.addEventListener('submit', addTask);
 taskList.addEventListener('click', removeTask);
 clearBtn.addEventListener("click", ClearTask)
-
+filter.addEventListener('keyup', filterTask);
 
 //Define Function
 function addTask(e) {
@@ -48,6 +48,11 @@ function removeTask(e) {
 
 //clear Task ----
 function ClearTask(e) {
+    //Alert
+    if (confirm('Are you Sure to clear All❗')) {
+        // console.log();
+    }
+
     // taskList.innerHTML ="";
 
     //FASTER 
@@ -56,6 +61,23 @@ function ClearTask(e) {
     }
 }
 
+
+//Filter Task
+//Search Filter
+
+function filterTask(e) {
+    let text = e.target.value.toLowerCase();
+    // console.log(text);
+    document.querySelectorAll('li').forEach(task => {
+        let item = task.firstChild.textContent;
+        // != -1  means items found (word mach to word)
+        if (item.toLowerCase().indexOf(text) != -1) {
+            task.style.display = 'block';
+        } else {
+            task.style.display = 'none';
+        }
+    });
+}
 
 
 

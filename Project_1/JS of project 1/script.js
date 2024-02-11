@@ -8,9 +8,9 @@ let clearBtn = document.querySelector('#clear_task_btn');
 //Define EventListener
 form.addEventListener('submit', addTask);
 taskList.addEventListener('click', removeTask);
-clearBtn.addEventListener("click", ClearTask)
+clearBtn.addEventListener("click", ClearTask);
 filter.addEventListener('keyup', filterTask);
-document.addEventListener('DOMContentLoaded', getTasks)
+document.addEventListener('DOMContentLoaded', getTasks);
 
 //Define Function
 function addTask(e) {
@@ -21,7 +21,18 @@ function addTask(e) {
     } else {
         // Create li element
         let li = document.createElement('li');
+
+        //Adding check Box 
+        let createCheckBox = document.createElement("INPUT");
+        createCheckBox.setAttribute("type", "checkbox");
+        li.appendChild(createCheckBox);
+
+        // Store the task name and checkbox status in local storage
+        StoreTaskInLocalStorage(taskInput.value, createCheckBox.checked);
+
         li.appendChild(document.createTextNode(taskInput.value + " "));
+
+        
 
         let link = document.createElement('a');
         link.setAttribute('href', '#');
@@ -87,14 +98,21 @@ function filterTask(e) {
 
 
 // Store in Local Storage
-function StoreTaskInLocalStorage(task) {
+function StoreTaskInLocalStorage(task, checked) {
     let tasks;
     if (localStorage.getItem('tasks') === null) {
         tasks = [];
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'))
     }
-    tasks.push(task);
+     // Create an object for the task with task name and checkbox status
+     let taskObject = {
+        name: task,
+        isChecked: checked
+    };
+    tasks.push(taskObject);
+
+    // tasks.push(task);
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }

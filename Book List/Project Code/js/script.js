@@ -1,5 +1,6 @@
 //get the UI elements
 let form = document.querySelector('#book-form');
+let booklist = document.querySelector("#book-list");
 
 //Book Class
 class Book {
@@ -11,11 +12,11 @@ class Book {
 }
 // UI class
 class UI {
-    constructor() {
+    // constructor() {
 
-    }
+    // }
 
-    addToBooklist(book) {
+    static addToBooklist(book) {
         let list = document.querySelector('#book-list');
         let row = document.createElement('tr');
         row.innerHTML = `
@@ -27,12 +28,12 @@ class UI {
         list.appendChild(row);
     }
 
-    clearFilds() {
+    static clearFilds() {
         document.querySelector('#title').value = '',
             document.querySelector('#author').value = '',
             document.querySelector('#isbn').value = '';
     }
-    showAlert(message, className) {
+    static showAlert(message, className) {
         let div = document.createElement('div');
         div.className = `alert ${className}`;
         div.appendChild(document.createTextNode(message));
@@ -45,11 +46,23 @@ class UI {
             document.querySelector('.alert').remove();//alert from squlaton class
         }, 3000);
     }
+
+    static deleteFromBook(target){
+        // console.log(target);
+        if (target.hasAttribute('href')) {
+            target.parentElement.parentElement.remove();
+            // console.log(target.parentElement.parentElement);
+
+            
+        UI.showAlert('Book Removed!', 'success');
+        }
+    }
 }
 
 
 //add event Listener
 form.addEventListener('submit', newBook);
+booklist.addEventListener('click', removeBook)
 
 
 //Define Functions
@@ -59,11 +72,11 @@ function newBook(e) {
         author = document.querySelector('#author').value,
         isbn = document.querySelector('#isbn').value;
 
-    let ui = new UI();
+    // let ui = new UI();
 
     if (title === "" || author === "" || isbn === "") {
         
-        ui.showAlert("please fill all the filds !", "error");
+        UI.showAlert("please fill all the filds !", "error");
     } else {
 
 
@@ -71,12 +84,23 @@ function newBook(e) {
         let book = new Book(title, author, isbn);
         // console.log(book);
 
-        ui.addToBooklist(book);
+        UI.addToBooklist(book);
 
-        ui.showAlert("Successfully added the book", "success");
+        UI.showAlert("Successfully added the book", "success");
 
-        ui.clearFilds();
+        UI.clearFilds();
     }
 
     e.preventDefault();
+}
+
+
+// Book removing function
+function removeBook(e) {
+    // let ui = new UI();
+    UI.deleteFromBook(e.target);
+
+
+
+    e.preventDefault(); 
 }

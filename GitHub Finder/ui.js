@@ -1,11 +1,11 @@
 class UI {
-    constructor() {
-        this.profile = document.querySelector('#profile');
-    }
+  constructor() {
+    this.profile = document.querySelector('#profile');
+  }
 
-    showProfile(user) {
-        this.clearAlert();
-        this.profile.innerHTML = `
+  showProfile(user) {
+    this.clearAlert();
+    this.profile.innerHTML = `
         <div class="card card-body mb-3">
         <div class="row">
           <div class="col-md-3">
@@ -23,32 +23,33 @@ class UI {
               <li class="list-group-item">Website/Blog: ${user.blog}</li>
               <li class="list-group-item">Location: ${user.location}</li>
               <li class="list-group-item">Member Since: ${user.created_at}</li>
+              <!--  <li class="list-group-item">E-mail: ${user.emails_url}</li> -->
             </ul>
           </div>
         </div>
       </div>
         `;
-    }
+  }
 
-    clearProfile() {
-        this.profile.innerHTML = "";
-    }
+  clearProfile() {
+    this.profile.innerHTML = "";
+  }
 
-    showAlert(message, className) {
-        this.clearAlert();
-        this.clearProfile();
-        let div = document.createElement('div');
-        div.className = className;
-        div.appendChild(document.createTextNode(message));
-        let container = document.querySelector('.searchContainer');
-        let search = document.querySelector('.search');
-        container.insertBefore(div, search);
-    }
+  showAlert(message, className) {
+    this.clearAlert();
+    this.clearProfile();
+    let div = document.createElement('div');
+    div.className = className;
+    div.appendChild(document.createTextNode(message));
+    let container = document.querySelector('.searchContainer');
+    let search = document.querySelector('.search');
+    container.insertBefore(div, search);
+  }
 
-    clearAlert() {
-        let currentAlert = document.querySelector('.alert');
-        if(currentAlert) {
-            currentAlert.remove();
-        }
+  clearAlert() {
+    let currentAlert = document.querySelector('.alert');
+    if (currentAlert) {
+      currentAlert.remove();
     }
+  }
 }

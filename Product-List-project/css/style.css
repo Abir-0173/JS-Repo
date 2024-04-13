@@ -6,12 +6,16 @@ h1 {
     text-align: center;
     font-size: 40px;
 }
+.product-card > h3{
+    text-align: center;
+}
 
 a {
     text-decoration: none;
     color: black;
 }
-button{
+
+button {
     background-color: #f2f4ff;
 }
 
@@ -30,4 +34,30 @@ button{
     padding: 10px;
 }
 
-.part2 {}
+.part2 {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.cart {
+    min-height: 200px;
+    margin: 40px;
+}
+
+.cart-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: auto;
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.remove {
+    background-color: red;
+}

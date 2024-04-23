@@ -34,9 +34,9 @@ function postCheck() {
     // console.log(postCode.value);
     const postRegex = /^[0-9]{4}$/;
     if (postRegex.test(postCode.value)) {
-        alert('Valid Address');
+        alert('You enter a valid Post code.');
     } else {
-        alert('not a Valid Address');
+        alert('not a Valid Post code.');
     }
 }
 

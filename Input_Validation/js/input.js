@@ -31,15 +31,6 @@ function mailCheck() {
     }
 }
 
-// function postCheck() {
-//     const postRegex = /^[0-9]{4}$/;
-//     if (postRegex.test(postCode.value)) {
-//         alert('Valid Post Code');
-//     } else {
-//         alert('Not a Valid Post Code');
-//     }
-// }
-
 function postCheck() {
     // console.log(postCode.value);
     const postRegex = /^[0-9]{4}$/;

@@ -1,4 +1,3 @@
-
 //get Elements
 var phone = document.querySelector('.phone');
 var email = document.querySelector('.mail');

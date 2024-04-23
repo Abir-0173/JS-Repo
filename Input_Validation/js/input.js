@@ -41,7 +41,4 @@ function postCheck() {
     }
 }
 
-// console.log(phone);
-// console.log(email);
-// console.log(postCode);
 

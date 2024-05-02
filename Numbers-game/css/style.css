@@ -56,4 +56,9 @@ section {
     margin: 16px;
 }
 
-.submit {}
+.submit {
+    margin: 10px;
+}
+.playAgain {
+    margin: 10px;
+}

@@ -36,11 +36,11 @@ function submit() {
         c = 0;
 
     } else if (x < y) {
-        alert(`Opps you are close 😱 It's Greter then ${x} \n ${3 - c} Attemts Left`);
+        alert(`Opps you are close 😱 It's Greter then ${x} \n ${3 - c} Attempt Left`);
         userInput.value.innerhtml = '';
 
     } else if (x > y) {
-        alert(`Opps you are close to the number it's Less then ${x} \n ${3 - c} Attemts Left`);
+        alert(`Opps you are close to the number it's Less then ${x} \n ${3 - c} Attempt Left`);
         userInput.value.innerhtml = '';
     }
 

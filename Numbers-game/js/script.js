@@ -36,36 +36,23 @@ function submit() {
         c = 0;
 
     } else if (x < y) {
-        alert(`Opps you are close 😱 It's Greter then ${x}`);
+        alert(`Opps you are close 😱 It's Greter then ${x} \n ${3 - c} Attemts Left`);
         userInput.value.innerhtml = '';
 
     } else if (x > y) {
-        alert(`Opps you are close to the number it's Less then ${x}`);
+        alert(`Opps you are close to the number it's Less then ${x} \n ${3 - c} Attemts Left`);
         userInput.value.innerhtml = '';
     }
 
     // Check if the player has made 3 attempts
     if (c >= 3) {
-        alert('☠️☠️ You Lose The GAME ☠️☠️');
+        alert('☠️☠️ You Lose The GAME ☠️☠️ \n Try again');
         y = getRandomInt(min, max);
         console.log(y);
         c = 0;
-        // Optionally, you can reset the game here
-        // reset();
     }
 
-    // alert('🎉🎉 Hurra ! You Win The game 🎉🎉');
-    // break;
-    // if (i <= 3) {
-    //     alert('☠️☠️ You Loos The GAME ☠️☠️');
-    // }
 }
-// }
-// submit();
-
-
-
-
 
 
 function reset() {

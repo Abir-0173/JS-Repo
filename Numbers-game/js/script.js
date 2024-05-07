@@ -27,11 +27,13 @@ function submit() {
     c++;
     console.log(c);
 
-    
+
 
     if (x == y) {
         alert('🎉🎉 Hurra ! You Win The game 🎉🎉');
         // break;
+        y = getRandomInt(min, max);
+        c = 0;
 
     } else if (x < y) {
         alert(`Opps you are close 😱 It's Greter then ${x}`);
@@ -47,6 +49,7 @@ function submit() {
         alert('☠️☠️ You Lose The GAME ☠️☠️');
         y = getRandomInt(min, max);
         console.log(y);
+        c = 0;
         // Optionally, you can reset the game here
         // reset();
     }
